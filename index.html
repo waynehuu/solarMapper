@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>solarMapper - Solar PV Panels in Connecticut, USA</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='./style.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div id='map'></div>
+    <div class='banner'>
+        <div style='margin-left: 30px'>
+            <h3 style='margin-bottom: 10px; margin-top: 10px;'>solarMapper</h3>
+            <p style='margin-top: 5px' class='medium-text'>Solar PV Panels in Connecticut, USA</p>
+        </div>
+        <div style='margin-right: 30px'>
+            <div style='float:right'>
+                <h4 id='about' style='text-align:right; margin: 0px 10px'>ABOUT</h4>
+            </div>
+            <div style='float:right'>
+                <h4 style='text-align:right; margin: 0px 10px'>
+                    <a target='_blank' href='https://github.com/waynehuu/solarMapper'>DATA</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div id='jump-to'>
+        <div>
+            <h4 id='jump-to-text'>Jump to view:</h4>
+        </div>
+        <div>
+            <button class='jump-buttons' id='groton'>Groton (residential)</button>
+            <button class='jump-buttons' id='somers'>Somers (utility)</button>
+            <button class='jump-buttons' id='west-haven'>West Haven (commercial)</button>
+            <button class='jump-buttons' id='full-ct'>Full CT view</button>
+        </div>
+    </div>
+    <!-- <div id='modal' class='modal'>
+        <div class='modal-content'>
+            <h3>About</h3>
+            <p>
+                <a target='_blank' href='https://arxiv.org/abs/1902.10895'>Paper link</a>
+            </p>
+        </div>
+    </div> -->
+    <script src='./main.js'></script>
+
+</body>
+
+</html>
