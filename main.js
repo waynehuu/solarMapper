@@ -5,7 +5,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZ
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/energyinitiative/ck4bir2rn1poi1cpne9onmxhb',
+    style: 'mapbox://styles/energyinitiative/ck5zqb3z523xg1inph4v8bnnz',
     center: [-72.670195, 41.595318],
     zoom: 8,
     minZoom: 4
