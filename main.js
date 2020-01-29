@@ -1,6 +1,9 @@
 const get = document.getElementById.bind(document);
 const query = document.querySelector.bind(document);
 
+var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson'
+var tile_id_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/tile_id.txt'
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
 
 var map = new mapboxgl.Map({
@@ -42,7 +45,7 @@ map.on('load', function () {
 
     map.addSource('centroids', {
         'type': 'geojson',
-        'data': 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson',
+        'data': centroids_path,
         'cluster': true,
         'clusterMaxZoom': 11,
         'clusterRadius': 100
