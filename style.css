@@ -36,6 +36,37 @@ h4 a:hover {
     color: inherit;
 }
 
+#modal {
+    position:fixed;
+    overflow: hidden;
+    background-color:rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.15s ease-out, width 0s linear 0.15s, height 0s linear 0.15s;
+}
+
+#modal.visible {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.15s ease-out;
+}
+
+.modal-content {
+    margin: 0 auto;
+    width: 40%;
+    background-color: #fbfbfb;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: auto;
+}
+
 #jump-to {
     position: absolute;
     bottom: 0;

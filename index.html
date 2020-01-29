@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='utf-8' />
-    <title>solarMapper - Solar PV Panels in Connecticut, USA</title>
+    <title>SolarMapper - Solar PV Panels in Connecticut, USA</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
@@ -13,13 +13,15 @@
 <body>
     <div id='map'></div>
     <div class='banner'>
-        <div style='margin-left: 30px'>
+        <div style='margin-left: 30px; cursor: pointer; cursor: hand;' onclick='openModal()'>
             <h3 style='margin-bottom: 10px; margin-top: 10px;'>solarMapper</h3>
             <p style='margin-top: 5px' class='medium-text'>Solar PV Panels in Connecticut, USA</p>
         </div>
         <div style='margin-right: 30px'>
             <div style='float:right'>
-                <h4 id='about' style='text-align:right; margin: 0px 10px'>ABOUT</h4>
+                <h4 style='text-align:right; margin: 0px 10px; cursor: pointer; cursor: hand;' onclick='openModal()'>
+                    ABOUT
+                </h4>
             </div>
             <div style='float:right'>
                 <h4 style='text-align:right; margin: 0px 10px'>
@@ -39,14 +41,14 @@
             <button class='jump-buttons' id='full-ct'>Full CT view</button>
         </div>
     </div>
-    <!-- <div id='modal' class='modal'>
+    <div id='modal'>
         <div class='modal-content'>
-            <h3>About</h3>
+            <h3>SolarMapper</h3>
             <p>
                 <a target='_blank' href='https://arxiv.org/abs/1902.10895'>Paper link</a>
             </p>
         </div>
-    </div> -->
+    </div>
     <script src='./main.js'></script>
 
 </body>
