@@ -8,7 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZ
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/energyinitiative/ck5zqb3z523xg1inph4v8bnnz',
+    style: 'mapbox://styles/energyinitiative/ck5zsiv3z2yhz1iltudwldnff',
     center: [-72.670195, 41.595318],
     zoom: 8,
     minZoom: 4
@@ -20,19 +20,20 @@ map.on('load', function () {
 
     get('west-haven').addEventListener('click', function () {
         map.flyTo({
-            center: [-72.981017, 41.260060],
-            zoom: 16
+            // center: [-72.981017, 41.260060],
+            center: [-72.985017, 41.258060],
+            zoom: 17
         });
     });
     get('somers').addEventListener('click', function () {
         map.flyTo({
             center: [-72.453251, 41.956257],
-            zoom: 16
+            zoom: 15
         });
     });
     get('groton').addEventListener('click', function () {
         map.flyTo({
-            center: [-72.068590, 41.377535],
+            center: [-72.068590, 41.376535],
             zoom: 15
         });
     });
