@@ -1,2 +1,6 @@
 data
 *.geojson
+*.json
+*.ipynb
+*.python
+*.txt
