@@ -12,8 +12,6 @@ var tile_id = [
     'energyinitiative.8oer6r7z',
     'energyinitiative.79y0hx10',
     'energyinitiative.3x2shkuo',
-    'energyinitiative.199f29c9',
-    'energyinitiative.8jbzsags',
     'energyinitiative.1gp508hb',
     'energyinitiative.c156x3z8',
     'energyinitiative.8usr5a02',
@@ -96,7 +94,7 @@ var tile_id = [
     'energyinitiative.73jpwxkj',
     'energyinitiative.4ia5cmyp',
     'energyinitiative.716tsb1n',
-    'energyinitiative.0icxkmpu'
+    'energyinitiative.0icxkmpu',
 ];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
@@ -106,7 +104,8 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/energyinitiative/ck5zsiv3z2yhz1iltudwldnff',
     center: [-72.670195, 41.595318],
     zoom: 8,
-    minZoom: 4
+    minZoom: 5,
+    maxZoom: 19,
 });
 
 // map.addControl(new mapboxgl.FullscreenControl());
@@ -139,8 +138,6 @@ map.on('load', function () {
         });
     });
 
-    // TODO: some tiles fail to load
-
     tile_id.forEach(function (item) {
         map.addSource(item, {
             type: 'raster',
@@ -151,7 +148,7 @@ map.on('load', function () {
             id: item,
             type: 'raster',
             source: item,
-            // minzoom: 11,
+            minzoom: 11,
         },
             'panels-cviclt' // This loads satellite imagery tiles before panels polygon layer
         );
@@ -159,7 +156,7 @@ map.on('load', function () {
 
     map.addSource('centroids', {
         type: 'geojson',
-        data: centroids_path, // TODO: change data mapbox hosted with dataset api
+        data: centroids_path, // TODO: replace data with mapbox hosted using mapbox dataset api
         cluster: true,
         clusterMaxZoom: 11,
         clusterRadius: 100
