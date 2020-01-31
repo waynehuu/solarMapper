@@ -1,8 +1,9 @@
 const get = document.getElementById.bind(document);
 const query = document.querySelector.bind(document);
 
-var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson'
-var tile_id_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/tile_id.txt'
+var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson';
+// var centroids_path_mapbox = 'https://api.mapbox.com/datasets/v1/energyinitiative/cjuww43dn3oh02xp2l40jqq0z/features?access_token=pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
+var tile_id_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/tile_id.txt';
 
 var tiles = [
     'mapbox://energyinitiative.57a6dx3k',
@@ -96,7 +97,7 @@ var tiles = [
     'mapbox://energyinitiative.4ia5cmyp',
     'mapbox://energyinitiative.716tsb1n',
     'mapbox://energyinitiative.0icxkmpu'
-]
+];
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
 
@@ -151,15 +152,17 @@ map.on('load', function () {
             id: layerID,
             type: 'raster',
             source: sourceID,
-            minZoom: 11
-        });
+            minzoom: 11,
+        },
+            'panels-cviclt' // This loads satellite imagery tiles before panels polygon layer
+        );
     };
 
-    // TODO: some tiles fail to load; tiles cover mapbox base layer
+    // TODO: some tiles fail to load
 
     map.addSource('centroids', {
         type: 'geojson',
-        data: centroids_path,
+        data: centroids_path, // TODO: change data mapbox hosted with dataset api
         cluster: true,
         clusterMaxZoom: 11,
         clusterRadius: 100
