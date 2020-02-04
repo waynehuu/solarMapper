@@ -107,9 +107,9 @@ var map = new mapboxgl.Map({
     maxZoom: 19,
 });
 
-// map.addControl(new mapboxgl.FullscreenControl());
-
 map.on('load', function () {
+
+    // Make "jump to view" buttons:
 
     get('west-haven').addEventListener('click', function () {
         map.flyTo({
@@ -137,6 +137,8 @@ map.on('load', function () {
         });
     });
 
+    // Add own satellite imagery
+
     tile_id.forEach(function (item) {
         map.addSource(item, {
             type: 'raster',
@@ -152,6 +154,8 @@ map.on('load', function () {
             'panels-cviclt' // This loads satellite imagery tiles before panels polygon layer
         );
     });
+
+    // Add centroid clusters
 
     map.addSource('centroids', {
         type: 'geojson',
