@@ -34,9 +34,9 @@ body {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
     #subtitle {
-        font-size: 1.8vw;
+        font-size: 1.7vw;
         width: 60%;
     }
 }
