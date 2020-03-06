@@ -5,4 +5,4 @@ The effective integration of distributed solar photovoltaic (PV) arrays into exi
 
 [Full text on arXiv](https://arxiv.org/abs/1902.10895)
 
-Visulization webpage created by Wayne Hu.
+Visulization webpage created by Wayne Hu. Built with Mapbox.
