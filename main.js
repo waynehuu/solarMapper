@@ -153,7 +153,7 @@ map.on('load', function () {
             source: item,
             minzoom: 11,
         },
-            'panels-cviclt' // This loads satellite imagery tiles before panels polygon layer
+            'polygons-filled' // This loads satellite imagery tiles before panels polygon layer
         );
     });
 
