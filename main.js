@@ -1,7 +1,8 @@
 const get = document.getElementById.bind(document);
 const query = document.querySelector.bind(document);
 
-var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson';
+// var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson';
+var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids_12182020_all.geojson'
 // var centroids_path_mapbox = 'https://api.mapbox.com/datasets/v1/energyinitiative/cjuww43dn3oh02xp2l40jqq0z/features?access_token=pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
 
 var tile_id = [
@@ -100,7 +101,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZ
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/energyinitiative/ck5zsiv3z2yhz1iltudwldnff',
+//    style: 'mapbox://styles/energyinitiative/ck5zsiv3z2yhz1iltudwldnff',
+    style: 'mapbox://styles/energyinitiative/ckiulf5pe0sf119o2vzfo3i2h'
     center: [-72.670195, 41.595318],
     zoom: 8,
     minZoom: 5,
