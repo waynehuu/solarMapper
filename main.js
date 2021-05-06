@@ -109,20 +109,31 @@ var map = new mapboxgl.Map({
     maxZoom: 19,
 });
 
+var tts_marker = null;
+
 map.on('load', function () {
 
     // Make "jump to coordinates" button:
 
     get('submit-coords').addEventListener('click', function () {
         var coords = get('dest-coords').value.split(',').map(parseFloat);
-        try {map.flyTo({
-            center: coords,
-            zoom: 19
-        });
+
+        try {
+            map.flyTo({
+                center: coords,
+                zoom: 19
+            });
+
+            if (tts_marker !== null) {
+                tts_marker.remove();
+            }
+            tts_marker = new mapboxgl.Marker({
+                color: "#eaff30"
+            }).setLngLat(coords).addTo(map);
         }
         catch (err) {
             console.log(err.message);
-            alert('Accepted LngLatLike coordinates format: -72.985, 41.258');
+            alert('Acceptable LngLatLike coordinates format: -72.985, 41.258');
         }
     });
 
