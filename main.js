@@ -111,7 +111,22 @@ var map = new mapboxgl.Map({
 
 map.on('load', function () {
 
-    // Make "jump to view" buttons:
+    // Make "jump to coordinates" button:
+
+    get('submit-coords').addEventListener('click', function () {
+        var coords = get('dest-coords').value.split(',').map(parseFloat);
+        try {map.flyTo({
+            center: coords,
+            zoom: 19
+        });
+        }
+        catch (err) {
+            console.log(err.message);
+            alert('Accepted LngLatLike coordinates format: -72.985, 41.258');
+        }
+    });
+
+    // Make "jump to location" buttons:
 
     get('west-haven').addEventListener('click', function () {
         map.flyTo({

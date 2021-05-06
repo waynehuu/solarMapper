@@ -95,10 +95,9 @@ h4 a:hover {
     overflow-y: auto;
 }
 
-#jump-to {
+
+.jump-to {
     position: absolute;
-    bottom: 0;
-    right: 0;
     background: rgba(255, 255, 255, 0.7);
     margin-right: 20px;
     overflow: auto;
@@ -106,13 +105,24 @@ h4 a:hover {
     padding: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
-    height: 210px;
     margin-bottom: 40px;
     width: 180px;
     border-radius: 10px;
 }
 
-#jump-to-text {
+#jump-to-location.jump-to {
+    bottom: 0;
+    right: 0;
+    height: 210px;
+}
+
+#jump-to-coords.jump-to {
+    bottom: 250px;
+    right: 0;
+    height: 120px;
+}
+
+.jump-to-text {
     text-align: center;
     color: #111111;
     margin-top: 5px;
@@ -136,6 +146,15 @@ h4 a:hover {
 
 .jump-buttons:hover {
     background: #2B98C5;
+}
+
+#submit-coords.jump-buttons {
+    margin: 50px 0 0;
+}
+
+#dest-coords {
+    position: absolute;
+    top: 55px;
 }
 
 #groton {
