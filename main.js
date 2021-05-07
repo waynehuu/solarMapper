@@ -140,6 +140,11 @@ map.on('load', function () {
     // Make "jump to location" buttons:
 
     get('west-haven').addEventListener('click', function () {
+
+        if (tts_marker !== null) {
+            tts_marker.remove();
+        }
+
         map.flyTo({
             // center: [-72.981017, 41.260060],
             center: [-72.985017, 41.258060],
@@ -147,18 +152,33 @@ map.on('load', function () {
         });
     });
     get('somers').addEventListener('click', function () {
+
+        if (tts_marker !== null) {
+            tts_marker.remove();
+        }
+
         map.flyTo({
             center: [-72.453251, 41.956257],
             zoom: 15
         });
     });
     get('groton').addEventListener('click', function () {
+
+        if (tts_marker !== null) {
+            tts_marker.remove();
+        }
+
         map.flyTo({
             center: [-72.068590, 41.376535],
             zoom: 15
         });
     });
     get('full-ct').addEventListener('click', function () {
+
+        if (tts_marker !== null) {
+            tts_marker.remove();
+        }
+
         map.flyTo({
             center: [-72.670195, 41.595318],
             zoom: 8
