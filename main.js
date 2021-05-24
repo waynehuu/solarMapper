@@ -1,8 +1,7 @@
 const get = document.getElementById.bind(document);
 const query = document.querySelector.bind(document);
 
-// var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids.geojson';
-var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/centroids_12182020_all.geojson'
+var centroids_path = 'https://raw.githubusercontent.com/waynehuu/solarMapper/master/revised_duke_centroids.geojson'
 // var centroids_path_mapbox = 'https://api.mapbox.com/datasets/v1/energyinitiative/cjuww43dn3oh02xp2l40jqq0z/features?access_token=pk.eyJ1IjoiZW5lcmd5aW5pdGlhdGl2ZSIsImEiOiJjazV3bzUwZHgxZmwxM2pvZ2M0YWc3bWpjIn0.ZgxnCrDTlmbiljcgEuJBpA';
 
 var tile_id = [
