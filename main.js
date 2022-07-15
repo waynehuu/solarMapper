@@ -250,6 +250,31 @@ map.on('load', function () {
             'text-size': 12,
         }
     });
+    
+    map.on('click', 'solar-pv-centroids-clusters', (e) => {
+        const features = map.queryRenderedFeatures(e.point, {
+            layers: ['solar-pv-centroids-clusters']
+        });
+        const clusterId = features[0].properties.cluster_id;
+        map.getSource('centroids').getClusterExpansionZoom(
+            clusterId,
+            (err, zoom) => {
+                if (err) return;
+
+                map.easeTo({
+                    center: features[0].geometry.coordinates,
+                    zoom: zoom
+                });
+            }
+        );
+    });
+
+    map.on('mouseenter', 'solar-pv-centroids-clusters', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'solar-pv-centroids-clusters', () => {
+        map.getCanvas().style.cursor = '';
+    });
 });
 
 let modal = get('modal');
